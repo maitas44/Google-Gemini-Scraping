@@ -38,4 +38,10 @@ How to set up the environment:
 
     sudo vncserver :1
 
+Access your VNC instance using a VNC client. In my chromebook Linux enviornment I installed remina and start it with:
+
+        /usr/bin/remmina
+
+Once inside Centos9, 
+
 
