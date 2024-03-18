@@ -50,8 +50,8 @@ Once inside Centos9, open firefox. Install refresh plugin.
 
 Check python version:
 
-[matias@instance-20240318-165854-gemini ~]$ python --version
-Python 3.9.18
+        [matias@instance-20240318-165854-gemini ~]$ python --version
+        Python 3.9.18
 
 Python 3.9 or greater is enough.
 
