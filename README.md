@@ -42,6 +42,12 @@ Access your VNC instance using a VNC client. In my chromebook Linux enviornment 
 
         /usr/bin/remmina
 
-Once inside Centos9, 
+Once inside Centos9, open firefox. Install suto refresh plugin.
+
+![image](https://github.com/maitas44/Google-Gemini-Scraping/assets/46689794/85a1eb37-31c2-4ef2-b8ab-cf9976cd4a7d)
+
+![image](https://github.com/maitas44/Google-Gemini-Scraping/assets/46689794/94df6afe-5ceb-44bb-b86b-7c066b4c8fcf)
+
+
 
 
