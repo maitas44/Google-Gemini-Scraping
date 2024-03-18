@@ -55,11 +55,10 @@ Check python version:
 
 Python 3.9 or greater is enough.
 
+Create a python virtual environment
 
+        [matias@instance-20240318-165854-gemini ~]$ python -m venv my_env
 
-
-
-
-
+        [matias@instance-20240318-165854-gemini ~]$ cd my_env/
 
 
