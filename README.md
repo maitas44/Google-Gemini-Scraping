@@ -24,7 +24,7 @@ How to set up the environment:
 
     sudo yum groupinstall "Server with GUI"  -y
 
-    sudo systemctl stop firewalld -d
+    sudo systemctl stop firewalld
 
     sudo vncserver :1
 
