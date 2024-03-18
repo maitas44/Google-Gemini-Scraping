@@ -11,3 +11,19 @@ Then I created:
 2- A python script that sends the jpg to the Google Gemini API and checks if the needed text is shown. If that text is shown, it writes a text file with the text "It is happening". It runs each 5 minutes using cron.
 
 3- A python script that checks if the previous file shows the text "It is happening", if it des sends me a Telegram message. It runs each 5 minutes using cron.
+
+How to set up the environmetn:
+1- Create a Centos9 VM and install VNC server.
+    sudo yum update
+    sudo yum install tigervnc -y
+    sudo yum install tigervnc-server -y
+    sudo yum groupinstall "Server with GUI"  -y
+    sudo systemctl stop firewalld -d
+    sudo vncserver :1
+// this step is to get a fresh xstartup file to edit. You need to set up a password.
+    sudo vncserver -kill :1
+    sudo vim /root/.vnc/xstartup
+//edit /root/.vnc/xstartup and add "X11&" at the end as a new final line.
+    sudo vncserver :1
+
+
