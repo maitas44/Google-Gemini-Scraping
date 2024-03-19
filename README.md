@@ -50,18 +50,34 @@ Once inside Centos9, open firefox. Install refresh plugin.
 
 Check python version:
 
-        [matias@instance-20240318-165854-gemini ~]$ python --version
+        python --version
         Python 3.9.18
 
 Python 3.9 or greater is enough.
 
 Create a python virtual environment
 
-        [matias@instance-20240318-165854-gemini ~]$ python -m venv my_env
-
-        [matias@instance-20240318-165854-gemini ~]$ cd my_env/
+        python -m venv my_env
 
 To enable the virtual environment:
 
-        source ./bin/activate
+        source my_env/bin/activate
+
+To disable later on:
+
+        (my_env) $ deactivate
+
+Go to the directory
+
+        cd my_env
+
+Export display to the ssh session.
+
+        export DISPLAY=:1
+
+Install required library:
+
+    pip install pyautogui
+
+
 
