@@ -40,7 +40,7 @@ How to set up the environment:
 
 Access your VNC instance using a VNC client. In my chromebook Linux enviornment I installed remina and start it with:
 
-        /usr/bin/remmina
+    /usr/bin/remmina
 
 Once inside Centos9, open firefox. Install refresh plugin.
 
@@ -50,34 +50,49 @@ Once inside Centos9, open firefox. Install refresh plugin.
 
 Check python version:
 
-        python --version
-        Python 3.9.18
+    python --version
+    Python 3.9.18
 
 Python 3.9 or greater is enough.
 
 Create a python virtual environment
 
-        python -m venv my_env
+    python -m venv my_env
 
 To enable the virtual environment:
 
-        source my_env/bin/activate
+    source my_env/bin/activate
 
 To disable later on:
 
-        (my_env) $ deactivate
+    (my_env) $ deactivate
 
 Go to the directory
 
-        cd my_env
+    cd my_env
 
 Export display to the ssh session.
 
-        export DISPLAY=:1
+    export DISPLAY=:1
 
 Install required library:
 
     pip install pyautogui
 
+    sudo yum install -y python3-tkinter tk-devel 
 
+Use an editor to create a capture.py file with the following data:
+
+    import pyautogui
+    import time
+    # Short delay (adjust if needed)
+    time.sleep(2) 
+    # Take the screenshot
+    my_screenshot = pyautogui.screenshot()
+    # Save as a JPEG 
+    my_screenshot.save('screenshot.jpg', quality=95)
+
+Add a cron entry:
+
+    */5 * * * * /usr/bin/bash -c "source /root/my_env/bin/activate && cd /root/my_env && python capture.py"
 
