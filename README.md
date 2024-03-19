@@ -61,4 +61,7 @@ Create a python virtual environment
 
         [matias@instance-20240318-165854-gemini ~]$ cd my_env/
 
+To enable the virtual environment:
+
+        source ./bin/activate
 
