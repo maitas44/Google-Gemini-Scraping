@@ -85,14 +85,27 @@ Use an editor to create a capture.py file with the following data:
 
     import pyautogui
     import time
-    # Short delay (adjust if needed)
-    time.sleep(2) 
-    # Take the screenshot
-    my_screenshot = pyautogui.screenshot()
-    # Save as a JPEG 
-    my_screenshot.save('screenshot.jpg', quality=95)
+    while True:  # Loop runs forever
+        try:
+            # Take the screenshot
+            my_screenshot = pyautogui.screenshot()
+            # Generate a unique filename with a timestamp
+            import datetime
+            filename = f"screenshot_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
+            # Save as a JPEG 
+            my_screenshot.save(filename, quality=95)
+        except Exception as e:
+            print(f"An error occurred: {e}")  # Log any errors
+        time.sleep(300)  # Wait 300 seconds (5 minutes)
 
-Add a cron entry:
+keep it running on a terminal window:
 
-    */5 * * * * /usr/bin/bash -c "source /root/my_env/bin/activate && cd /root/my_env && python capture.py"
+    python capture.py
+
+
+
+
+
+
+
 
