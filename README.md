@@ -91,7 +91,7 @@ Use an editor to create a capture.py file with the following data:
             my_screenshot = pyautogui.screenshot()
             # Generate a unique filename with a timestamp
             import datetime
-            filename = f"screenshot_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
+            filename = "screenshot.jpg"
             # Save as a JPEG 
             my_screenshot.save(filename, quality=95)
         except Exception as e:
@@ -102,6 +102,9 @@ keep it running on a terminal window:
 
     python capture.py
 
+Open a new terminal and start the python virtual environment:
+
+![image](https://github.com/maitas44/Google-Gemini-Scraping/assets/46689794/92cf9746-5957-4aee-93a1-cf7bf8e238c8)
 
 
 
