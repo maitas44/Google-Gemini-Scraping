@@ -145,5 +145,32 @@ Use an editor to create a geminiocr.py file with the following data:
           process_image()
           time.sleep(300)  # Wait for 5 minutes (300 seconds)
 
+replace GOOGLE_API_KEY = "AIzaSyASkqY3NBIsqyqSxEaW4ta-" with a valid API KEY from https://makersuite.google.com/
 
+open a new terminal widnow and run
+
+    python geminiocr.py
+    
+Install telegram libary:
+
+    pip install python-telegram-bot 
+    pip install pyTelegramBotAPI
+
+Get a Bot Token:
+
+Open Telegram and search for "BotFather".
+
+Start a conversation with BotFather and use the /newbot command.
+
+Follow BotFather's instructions to give your bot a name and username.
+
+BotFather will provide you with a bot token.
+
+Find Your Chat ID:
+
+Search for the "@get_id_bot" bot in Telegram.
+
+Start a conversation with the bot, and it will send you a message containing your Chat ID.
+
+Use an editor to create a telegram.py file with the following data:
 
