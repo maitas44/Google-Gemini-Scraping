@@ -147,11 +147,13 @@ Use an editor to create a geminiocr.py file with the following data:
 
 replace GOOGLE_API_KEY = "AIzaSyASkqY3NBIsqyqSxEaW4ta-" with a valid API KEY from https://makersuite.google.com/
 
-open a new terminal widnow and run
+open a new terminal widnow , activate the python virtual environment and run
 
     python geminiocr.py
-    
-Install telegram libary:
+
+open a new terminal window.
+
+open python virtual environment and Install telegram libary:
 
     pip install python-telegram-bot 
     pip install pyTelegramBotAPI
@@ -174,3 +176,23 @@ Start a conversation with the bot, and it will send you a message containing you
 
 Use an editor to create a telegram.py file with the following data:
 
+    import telebot
+    import time
+    BOT_TOKEN = '7079927993:AAH2wqCV8pTepEXwbpCuHaW9lJ4'
+    CHAT_ID = 70174
+    bot = telebot.TeleBot(BOT_TOKEN)
+    def check_and_send_message():
+        with open("salida.txt", "r") as f:
+            contents = f.read()
+            if "SI HAY TURNO" in contents:
+                bot.send_message(CHAT_ID, "Hay un turno disponible!")  
+    if __name__ == "__main__":
+        while True:
+            check_and_send_message()
+            time.sleep(300)  # Wait for 5 minutes 
+
+replace BOT_TOEKN and CHAT_ID with your data. Run
+
+    python telegram.py
+
+Now you will receive a Telegram message if the string "no hay turno" is NOT detected in the screen.
