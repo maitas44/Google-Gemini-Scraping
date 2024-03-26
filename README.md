@@ -106,9 +106,44 @@ Open a new terminal and start the python virtual environment:
 
 ![image](https://github.com/maitas44/Google-Gemini-Scraping/assets/46689794/92cf9746-5957-4aee-93a1-cf7bf8e238c8)
 
+run capture.py
 
+    python capture.py
 
+Use an editor to create a geminiocr.py file with the following data:
 
+    GOOGLE_API_KEY = "AIzaSyASkqY3NBIsqyqSxEaW4ta-"
+    import pathlib
+    import textwrap
+    import time  # Import the time library
+    import google.generativeai as genai
+    import PIL.Image
+    from PIL import Image
+    from IPython.display import display
+    from IPython.display import Markdown
+    def to_markdown(text):
+      text = text.replace('•', ' *')
+      return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+    def process_image():
+      model = genai.GenerativeModel('gemini-pro-vision')
+      image = PIL.Image.open('/root/my_env/screenshot.jpg')
+      response = model.generate_content(["Assume you are an OCR. answer with all the text you can detect in this image", image])
+      detected_text = ""
+      for output in response:
+        if output.text:
+          detected_text = output.text
+          break  # Found text, stop iterating
+      if "no hay turno" in detected_text:
+        with open("salida.txt", "w") as f:
+          f.write("no hay turno")
+      else:
+        with open("salida.txt", "w") as f:
+          f.write("SI HAY TURNO")
+    if __name__ == "__main__": 
+        genai.configure(api_key=GOOGLE_API_KEY)  # Configure outside the loop 
+        while True:
+          process_image()
+          time.sleep(300)  # Wait for 5 minutes (300 seconds)
 
 
 
