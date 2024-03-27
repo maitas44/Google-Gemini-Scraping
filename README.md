@@ -1,7 +1,7 @@
-# Google-Gemini-Scraping
-Use Google Gemini API to scrap web dynamic web pages.
+# Google-Gemini-Screenshot
+Use Google Gemini API to perform OCR on image captire of web dynamic web pages.
 
-I tried scraping a dynamic webpage using Python's Selenium library. I wasn't able to understand how to use it ot screap dynamic content that does not show when inspecting the html code.
+I tried looking for info on a dynamic webpage using Python's Selenium library. I wasn't able to understand how to use it ot screap dynamic content that does not show when inspecting the html code.
 
 I decided to create a Linux VM, install a X11 UI, and a web browser with a pugling that reloads the page each 5 minutes.
 Then I created:
